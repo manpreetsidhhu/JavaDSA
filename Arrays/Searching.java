@@ -13,7 +13,6 @@ public class Searching {
         Scanner sc = new Scanner(System.in);
         System.out.print("Element to be searched : ");
         el = sc.nextInt();
-        sc.close();
 
         int j = 0;
         boolean found = false;

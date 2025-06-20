@@ -1,5 +1,3 @@
-
-
 public class Main {
     public static void main(String[] args) {
         Creation creation = new Creation();
@@ -14,5 +12,15 @@ public class Main {
 
         CheckSorted check = new CheckSorted(arr);
         check.isSorted();
+
+        UpdateArray update = new UpdateArray(arr);
+        arr = update.insert();
+        for(int i:arr){
+            System.out.print(i+" ");
+        }
+        arr = update.delete();
+        for(int i:arr){
+            System.out.print(i+" ");
+        }
     }
 }
