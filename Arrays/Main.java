@@ -1,26 +1,55 @@
+
+import java.util.Scanner;
+
 public class Main {
+
     public static void main(String[] args) {
-        Creation creation = new Creation();
-        int[] arr = creation.createArray();
-        
-        Elements element = new Elements(arr);
-        element.largestElement();
-        element.smallestElement();
+        try (Scanner sc = new Scanner(System.in)) {
 
-        Searching search = new Searching(arr);
-        search.searchElement();
+            Creation creation = new Creation(sc);
+            int[] arr = creation.createArray();
 
-        CheckSorted check = new CheckSorted(arr);
-        check.isSorted();
+            UpdateArray update = new UpdateArray(arr, sc);
+            update.insert();
+            for (int i : arr) {
+                System.out.print(i + " ");
+            }
+            System.out.println();
+            update.delete();
+            for (int i : arr) {
+                System.out.print(i + " ");
+            }
+            System.out.println();
 
-        UpdateArray update = new UpdateArray(arr);
-        arr = update.insert();
-        for(int i:arr){
-            System.out.print(i+" ");
-        }
-        arr = update.delete();
-        for(int i:arr){
-            System.out.print(i+" ");
+            Elements element = new Elements(arr,sc);
+            element.largestElement();
+            element.smallestElement();
+            int immediateSmaller = element.immediateSmaller();
+            System.out.println(immediateSmaller);
+            int immediateLarger = element.immediateLarger();
+            System.out.println(immediateLarger);
+
+            Searching search = new Searching(arr,sc);
+            search.searchElement();
+
+            CheckSorted check = new CheckSorted(arr);
+            check.isSorted();
+
+            update.sortArray();
+            System.out.print("Sorted Array : ");
+            for (int i : arr) {
+                System.out.print(i + " ");
+            }
+            System.out.println();
+            check.isSorted();
+            update.reverseArray();
+            System.out.print("Reversed array : ");
+            for(int i : arr){
+                System.out.print(i+" ");
+            }
+            System.out.println();
+            check.isSorted();
+            sc.close();
         }
     }
 }

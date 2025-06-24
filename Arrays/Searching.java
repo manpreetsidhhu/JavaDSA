@@ -1,19 +1,20 @@
+
 import java.util.Scanner;
 
 public class Searching {
 
-    private int[] arr;
+    private final int[] arr;
     private int el;
+    private final Scanner sc;
 
-    Searching(int[] arr) {
+    Searching(int[] arr,Scanner sc) {
+        this.sc = sc;
         this.arr = arr;
     }
 
     public void searchElement() {
-        Scanner sc = new Scanner(System.in);
         System.out.print("Element to be searched : ");
         el = sc.nextInt();
-
         int j = 0;
         boolean found = false;
         System.out.print("Element " + el + " is found at indexes : ");
@@ -25,7 +26,7 @@ public class Searching {
             }
         }
         if (!found) {
-            System.out.print("null (element is not present in array)");
+            System.out.println("null (element is not present in array)");
         } else {
             System.out.println("\nNumber of occurrences is : " + j);
         }
