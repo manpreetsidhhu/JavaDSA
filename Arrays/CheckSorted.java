@@ -6,7 +6,7 @@ public class CheckSorted {
         this.arr = arr;
     }
 
-    public void isSorted() {
+    public boolean isSorted() {
         boolean isAscending = true;
         boolean isDescending = true;
         for (int i = 0; i < arr.length - 1; i++) {
@@ -18,11 +18,14 @@ public class CheckSorted {
         }
         if (isAscending) {
             System.out.println("Array is sorted in ascending order.");
+            return true;
         } else if (isDescending) {
             System.out.println("Array is sorted in descending order.");
+            return true;
         } else {
             System.out.println("Array is not sorted.");
         }
+        return false;
     }
 
 }
