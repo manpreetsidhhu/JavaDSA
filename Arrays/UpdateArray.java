@@ -71,4 +71,19 @@ public class UpdateArray {
             right--;
         }
     }
+
+    public int removeDuplicates() {
+        sortArray();
+        System.out.print("Removing Duplicates elements from array : ");
+        int[] temp = new int[arr.length];
+        temp[0]=arr[0];
+        int j = 1;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>temp[j-1]){
+                temp[j++] = arr[i];
+            }
+        }
+        System.arraycopy(temp, 0, arr, 0, arr.length);
+        return j;
+    }
 }
