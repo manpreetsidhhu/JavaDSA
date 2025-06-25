@@ -7,7 +7,7 @@ public class MajorityElement {
 
     // This is MOORE's Voting Algorithm
 
-    public void majorityElement() {
+    public int majorityElement() {
         int count = 0, candidate = -1;
         int n = arr.length;
         for(int i:arr){
@@ -26,8 +26,7 @@ public class MajorityElement {
                 count++;
             }
         }
-        int majority = (count>(n/2)) ? candidate : -1;
-        System.out.println("Majority Element is : "+majority);
+        return (count>(n/2)) ? candidate : -1;
     }
 
 }

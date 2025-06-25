@@ -58,7 +58,6 @@ import java.util.Scanner;
 public class Main {
 
     public static void display(int[] arr) {
-        System.out.print("Array: ");
         for (int i : arr) {
             System.out.print(i + " ");
         }
@@ -106,8 +105,8 @@ public class Main {
                     case 1 -> { update.insert(); display(arr); }
                     case 2 -> { update.delete(); display(arr); }
                     case 3 -> display(arr);
-                    case 4 -> { element.largestElement(); element.secondLargest(); }
-                    case 5 -> { element.smallestElement(); element.secondSmallest(); }
+                    case 4 -> { element.findMax(); element.findSecondMax(); }
+                    case 5 -> { element.findMin(); element.findSecondMin(); }
                     case 6 -> System.out.println(element.immediateLarger());
                     case 7 -> System.out.println(element.immediateSmaller());
                     case 8 -> search.searchElement();
@@ -131,7 +130,7 @@ public class Main {
                         }
                         System.out.println();
                     }
-                    case 14 -> majority.majorityElement();
+                    case 14 -> System.out.println("Majority Element is : " + majority.majorityElement());
                     case 0 -> {
                         System.out.println("Exiting program. Goodbye!");
                         continueProgram = false;

@@ -11,7 +11,7 @@ public class Elements {
         this.sc = sc;
     }
 
-    public void largestElement() {
+    public void findMax() {
         int max = Integer.MIN_VALUE;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] > max) {
@@ -21,7 +21,7 @@ public class Elements {
         System.out.println("Largest Element : " + max);
     }
 
-    public void secondLargest() {
+    public void findSecondMax() {
         int max = Integer.MIN_VALUE;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] > max) {
@@ -38,10 +38,10 @@ public class Elements {
                 }
             }
         }
-        System.out.println("Second Largest element : "+ arr[res]);
+        System.out.println("Second Largest element : " + arr[res]);
     }
 
-    public void smallestElement() {
+    public void findMin() {
         int min = Integer.MAX_VALUE;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] < min) {
@@ -51,27 +51,32 @@ public class Elements {
         System.out.println("Smallest Element : " + min);
     }
 
-    public void secondSmallest() {
-        if (arr == null || arr.length < 2) {
-            throw new IllegalArgumentException("Array must contain at least two distinct elements.");
-        }
-        int min = Integer.MAX_VALUE;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] < min) {
-                min = arr[i];
+    public void findSecondMin() {
+        try {
+            if (arr == null || arr.length < 2) {
+                throw new IllegalArgumentException("Array must contain at least two distinct elements.");
             }
-        }
-        int res = -1;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] != min) {
-                if (res == -1) {
-                    res = i;
-                } else if (arr[i] > arr[res]) {
-                    res = i;
+            int min = Integer.MAX_VALUE;
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] < min) {
+                    min = arr[i];
                 }
             }
+            int res = -1;
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] != min) {
+                    if (res == -1 || arr[i] < arr[res]) {
+                        res = i;
+                    }
+                }
+            }
+            if (res == -1) {
+                throw new IllegalArgumentException("Array must contain at least two distinct elements.");
+            }
+            System.out.println("Second Smallest Element : " + arr[res]);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
         }
-        System.out.println("Second Smallest Element : " + arr[res]);
     }
 
     public int immediateSmaller() {
