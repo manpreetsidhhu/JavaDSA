@@ -77,6 +77,7 @@ public class Main {
             Searching search = new Searching(arr, sc);
             BinarySearch bSearch = new BinarySearch(arr, sc);
             CheckSorted check = new CheckSorted(arr);
+            MajorityElement majority = new MajorityElement(arr);
 
             boolean continueProgram = true;
 
@@ -95,6 +96,7 @@ public class Main {
                 System.out.println("11. Sort Array");
                 System.out.println("12. Reverse Array");
                 System.out.println("13. Remove Duplicates");
+                System.out.println("14. Majority Element");
                 System.out.println("0. Exit");
 
                 System.out.print("Enter your choice: ");
@@ -114,18 +116,12 @@ public class Main {
                     case 11 -> {
                         update.sortArray();
                         System.out.print("Sorted Array: ");
-                        for (int i : arr) {
-                            System.out.print(i + " ");
-                        }
-                        System.out.println();
+                        display(arr);
                     }
                     case 12 -> {
                         update.reverseArray();
                         System.out.print("Reversed Array: ");
-                        for (int i : arr) {
-                            System.out.print(i + " ");
-                        }
-                        System.out.println();
+                        display(arr);
                     }
                     case 13 -> {
                         int n = update.removeDuplicates();
@@ -135,6 +131,7 @@ public class Main {
                         }
                         System.out.println();
                     }
+                    case 14 -> majority.majorityElement();
                     case 0 -> {
                         System.out.println("Exiting program. Goodbye!");
                         continueProgram = false;
