@@ -12,8 +12,10 @@ public class Main {
             // rope.ropePieces();
             // StringSubsets subsets = new StringSubsets(sc);
             // subsets.stringSubsets();
-            Palindrome strObj = new Palindrome(sc);
-            strObj.isPalindrome();
+            // Palindrome strObj = new Palindrome(sc);
+            // strObj.isPalindrome();
+            TowerOfHanoi toh = new TowerOfHanoi(sc);
+            toh.towerOfHanoi();
         }
     }
 }
