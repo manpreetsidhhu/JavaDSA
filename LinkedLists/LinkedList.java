@@ -1,17 +1,6 @@
 
 import java.util.Scanner;
 
-class Node {
-
-    int data;
-    Node next;
-
-    Node(int data) {
-        this.data = data;
-        this.next = null;
-    }
-}
-
 public class LinkedList {
 
     private Node head = null;
@@ -45,6 +34,10 @@ public class LinkedList {
         System.out.println();
     }
 
+    public void setHead(Node head){
+        this.head=head;
+    }
+
     public Node getHead() {
         return head;
     }
@@ -57,6 +50,5 @@ public class LinkedList {
             int value = sc.nextInt();
             insert(value);
         }
-        display();
     }
 }
