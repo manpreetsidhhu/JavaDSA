@@ -22,6 +22,12 @@ public class Main {
             update.insert();
             System.out.print("Updated (Inserted Node) ");
             list.display();
+            Operations LinkedList = new Operations(sc, head);
+            int length = LinkedList.length();
+            System.out.println("Length of Linked List : " + length);
+            System.out.println("Middle of Linked List is present at Node " + ((length%2==0)?(length/2)+1:(length+1)/2) + " having value : " + LinkedList.middleNode());
+            list.setHead(LinkedList.reverse());
+            list.display();
         }
     }
 }
