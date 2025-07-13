@@ -15,6 +15,7 @@ public class Main {
             update.delete();
             System.out.print("Updated (Deleted Node) ");
             list.display();
+            
             list.setHead(update.insert());
             System.out.println("Updated (Inserted Node) ");
             list.display();

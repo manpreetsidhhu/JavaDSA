@@ -59,17 +59,17 @@ public class UpdateList {
         int count = 1;
         Node temp = head;
         while (count < pos - 1 && temp != null) {
-            System.out.println(temp.data+" -> "+temp.next.data);
+            System.out.println(temp.data + " -> " + temp.next.data);
             temp = temp.next;
             count++;
         }
         Node newNode = new Node(val);
-        if(temp==null){
+        if (temp == null) {
             System.out.println("Position Out of Bounds");
             return head;
         }
-        newNode.next=temp.next;
-        temp.next=newNode;
+        newNode.next = temp.next;
+        temp.next = newNode;
         return head;
     }
 }
