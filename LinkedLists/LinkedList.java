@@ -10,16 +10,18 @@ public class LinkedList {
         this.sc = sc;
     }
 
-    public void insert(int data) {
-        Node newNode = new Node(data);
-        if (head == null) {
-            head = newNode; 
-        }else {
-            Node temp = head;
-            while (temp.next != null) {
-                temp = temp.next;
+    public void insert(int... dataList) {
+        for (int data : dataList) {
+            Node newNode = new Node(data);
+            if (head == null) {
+                head = newNode;
+            } else {
+                Node temp = head;
+                while (temp.next != null) {
+                    temp = temp.next;
+                }
+                temp.next = newNode;
             }
-            temp.next = newNode;
         }
     }
 
@@ -34,8 +36,8 @@ public class LinkedList {
         System.out.println();
     }
 
-    public void setHead(Node head){
-        this.head=head;
+    public void setHead(Node head) {
+        this.head = head;
     }
 
     public Node getHead() {

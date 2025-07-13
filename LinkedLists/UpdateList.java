@@ -54,12 +54,13 @@ public class UpdateList {
             System.out.println("Inserted Node with value " + val + " at position " + pos + " in Linked List");
             Node temp = new Node(val);
             temp.next = head;
-            return temp;
+            // return temp; //for this i needed a sethead(), because it was not returning the head,
+            head = temp;
+            return head;
         }
         int count = 1;
         Node temp = head;
         while (count < pos - 1 && temp != null) {
-            System.out.println(temp.data + " -> " + temp.next.data);
             temp = temp.next;
             count++;
         }
