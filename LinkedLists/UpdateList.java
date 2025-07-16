@@ -54,9 +54,7 @@ public class UpdateList {
             System.out.println("Inserted Node with value " + val + " at position " + pos + " in Linked List");
             Node temp = new Node(val);
             temp.next = head;
-            // return temp; //for this i needed a sethead(), because it was not returning the head,
-            head = temp;
-            return head;
+            return temp;
         }
         int count = 1;
         Node temp = head;
@@ -68,6 +66,24 @@ public class UpdateList {
         if (temp == null) {
             System.out.println("Position Out of Bounds");
             return head;
+        }
+        newNode.next = temp.next;
+        temp.next = newNode;
+        return head;
+    }
+
+    public Node sortedInsert(){
+        System.out.print("Enter the value to insert into the linked list: ");
+        int data = sc.nextInt();
+        Node newNode = new Node(data);
+        if(head==null||head.data>data){
+            newNode.next = head;
+            head = newNode;
+            return head;
+        }
+        Node temp = head;
+        while(temp.next!=null&& temp.next.data<data){
+            temp=temp.next;
         }
         newNode.next = temp.next;
         temp.next = newNode;
