@@ -1,8 +1,6 @@
-package JavaDSA.Sorting;
-
 public class BubbleSort {
 
-    private int[] arr;
+    private final int[] arr;
 
     public BubbleSort(int[] arr) {
         this.arr = arr;

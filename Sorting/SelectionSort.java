@@ -1,7 +1,6 @@
-package JavaDSA.Sorting;
 public class SelectionSort {
 
-    private int[] arr;
+    private final int[] arr;
 
     public SelectionSort(int[] arr) {
         this.arr = arr;

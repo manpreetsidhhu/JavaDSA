@@ -2,7 +2,7 @@
 import java.util.Scanner;
 
 class StringSubsets {
-    private Scanner sc;
+    private final Scanner sc;
 
     public StringSubsets(Scanner sc){
         this.sc = sc;
@@ -19,6 +19,7 @@ class StringSubsets {
 
     public void stringSubsets(){
         System.out.print("Enter the String to get subsets : ");
+        sc.nextLine();
         String str = sc.nextLine();
         int index = 0;
         String curr = "";

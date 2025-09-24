@@ -1,5 +1,3 @@
-package JavaDSA.Sorting;
-
 import java.util.Scanner;
 
 public class Main {
@@ -14,26 +12,28 @@ public class Main {
     public static void main(String[] args) {
         try (Scanner sc = new Scanner(System.in)) {
             Creation create = new Creation(sc);
-            int[] arr = create.createArray();
+            int[] originalArr = create.createArray();
             System.out.print("Original Array : ");
-            display(arr);
+            display(originalArr);
 
-            int[] bubbleArr = arr;
+            // Create separate copies for each sorting algorithm
+            int[] bubbleArr = originalArr.clone();
             BubbleSort bubble = new BubbleSort(bubbleArr);
             bubble.sort();
             System.out.print("Bubble Sorted Array : ");
             display(bubbleArr);
 
-            int[] selectionArr = arr;
+            int[] selectionArr = originalArr.clone();
             SelectionSort selection = new SelectionSort(selectionArr);
             selection.sort();
             System.out.print("Selection Sorted Array : ");
             display(selectionArr);
 
-            int[] insertionArr = arr;
+            int[] insertionArr = originalArr.clone();
             InsertionSorting insertion = new InsertionSorting(insertionArr);
             insertion.sort();
+            System.out.print("Insertion Sorted Array : ");
+            display(insertionArr);
         }
     }
-
 }
